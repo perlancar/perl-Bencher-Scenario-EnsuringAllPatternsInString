@@ -11,7 +11,7 @@ my @ajrand = qw(f e j b a i g d c h);
 my @bjrand = qw(f e j b   i g d c h);
 
 our $scenario = {
-    summary => 'Benchmark various algorithms of crypt()',
+    summary => 'Ensuring all patterns are in a string',
     description => <<'_',
 
 This scenario is inspired by <http://perlmonks.org/?node_id=1153410>. I want to
