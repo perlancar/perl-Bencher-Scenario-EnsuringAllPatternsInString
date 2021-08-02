@@ -2,3 +2,4 @@ Bencher-Scenario-EnsuringAllPatternsInString-*
 .build
 *~
 nytprof*
+.DS_Store
