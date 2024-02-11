@@ -1,11 +1,13 @@
 package Bencher::Scenario::EnsuringAllPatternsInString;
 
-# DATE
-# VERSION
-
 use 5.010001;
 use strict;
 use warnings;
+
+# AUTHORITY
+# DATE
+# DIST
+# VERSION
 
 my @ajrand = qw(f e j b a i g d c h);
 my @bjrand = qw(f e j b   i g d c h);
