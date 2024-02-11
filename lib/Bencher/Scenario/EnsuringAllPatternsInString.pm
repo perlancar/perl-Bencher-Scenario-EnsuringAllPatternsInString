@@ -14,7 +14,7 @@ my @bjrand = qw(f e j b   i g d c h);
 
 our $scenario = {
     summary => 'Ensuring all patterns are in a string',
-    description => <<'_',
+    description => <<'MARKDOWN',
 
 This scenario is inspired by <http://perlmonks.org/?node_id=1153410>. I want to
 know how much faster/slower using the single regex with look-around assertions
@@ -23,26 +23,26 @@ is compared to using multiple regex.
 As I expect, the single_re technique becomes exponentially slow as the number of
 patterns and length of string increases.
 
-_
+MARKDOWN
     participants => [
         {
             name => 'single_re',
             summary => 'Uses look-around assertions',
-            code_template => <<'_',
+            code_template => <<'MARKDOWN',
 state $re = do {
     my $re = join "", map {"(?=.*?".quotemeta($_).")"} @{<patterns>};
     qr/$re/;
 };
 <string> =~ $re;
-_
+MARKDOWN
         },
         {
             name => 'multiple_re',
-            code_template => <<'_',
+            code_template => <<'MARKDOWN',
 state $re = [map {my $re=quotemeta; qr/$re/} @{<patterns>}];
 for (@$re) { return 0 unless <string> =~ $_ }
 1;
-_
+MARKDOWN
         },
     ],
     datasets => [
